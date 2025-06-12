@@ -1,0 +1,124 @@
+.usage-form {
+  background: #f8faf7;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+.usage-table-mimic {
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+.usage-header-row {
+  display: flex;
+  background: #fff;
+  font-weight: 600;
+  border-bottom: 1px solid #e0e0e0;
+}
+.usage-header-cell {
+  flex: 1;
+  padding: 10px 4px;
+  text-align: center;
+  font-size: 1rem;
+  white-space: pre-line;
+}
+.month-header {
+  flex: 0.7;
+}
+.usage-row {
+  display: flex;
+  background: #e8f5e9;
+  border-bottom: 1px solid #e0e0e0;
+}
+.usage-row:nth-child(even) {
+  background: #d0e9d6;
+}
+.usage-cell {
+  flex: 1;
+  padding: 6px 4px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.month-label {
+  font-weight: 500;
+  flex: 0.7;
+}
+.usage-cell input[type="number"] {
+  width: 80px;
+  padding: 4px 6px;
+  border: 1px solid #bdbdbd;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #f8faf7;
+}
+.usage-form button {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background 0.2s;
+}
+.usage-form button:hover {
+  background: #256029;
+}
+.form-error {
+  color: #c62828;
+  margin-bottom: 8px;
+}
+.form-success {
+  color: #388e3c;
+  margin-bottom: 8px;
+}
+@media (max-width: 800px) {
+  .usage-form {
+    padding: 8px;
+    max-width: 99vw;
+  }
+  .usage-table-mimic {
+    font-size: 0.95rem;
+    overflow-x: auto;
+    min-width: 400px;
+  }
+  .usage-cell input[type="number"] {
+    width: 60px;
+  }
+}
+@media (max-width: 600px) {
+  .usage-form {
+    padding: 4px;
+    max-width: 99vw;
+  }
+  .usage-table-mimic {
+    font-size: 0.9rem;
+    overflow-x: auto;
+    min-width: 340px;
+  }
+  .usage-cell input[type="number"] {
+    width: 40px;
+    font-size: 0.9rem;
+  }
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+} 
