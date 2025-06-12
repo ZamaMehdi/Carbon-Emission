@@ -48,7 +48,9 @@ https://willowy-gnome-b23910.netlify.app/
 4. Run `node index.js` to deploy the backend server.
 5. Run `npm start` to deploy the frontend server.
 
+## Future Improvements
+!.Enhanced frontend for better look
+2.Might add some carbon reduction plans
 
-## Contribution
-Feel free to contribute to this project by opening issues or creating pull requests. Your feedback and contributions are highly appreciated!
+## Owner
 - [Zama Mehdi](mailto:zamamehdi9@gmail.com)
