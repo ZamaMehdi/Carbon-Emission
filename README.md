@@ -1,7 +1,7 @@
-##Overview
+## Overview
 Energy tracker here takes input of meter usage from user for whole 12 months time period where user can input upto 3 values for a single month (in kWh). Them after that it will calculate carbon emission on that basis and display it. With database all the entries made were saved securely and can be accessed later when required to modify and to delete.
 
-##Live Project
+## Live Project
 https://willowy-gnome-b23910.netlify.app/
 
 ## Available Scripts
