@@ -4,24 +4,51 @@ Energy tracker here takes input of meter usage from user for whole 12 months tim
 ## Live Project
 https://willowy-gnome-b23910.netlify.app/
 
-## Available Scripts
+## Key Features
+ 1. Electricity Usage Entry
+    Add monthly electricity usage (in kWh) through an easy-to-use form.
+    Data includes both actual and estimated usage entries.
 
-In the project directory, you can run:
+ 2. Interactive Charts
+    Visualize electricity usage with bar charts powered by Recharts.
+    Clear separation of actual vs estimated usage using different colors.
 
-### `npm start`
+ 3. Persistent Data Storage
+    All usage data is stored locally using SQLite, allowing persistent records without a cloud          database.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ 4. Full-Stack Integration
+    Seamless connection between React frontend (Netlify) and Express backend (Render).
+    Frontend communicates with the backend via environment-based API URL.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ 5. CORS-Enabled API
+    Backend is configured with CORS to securely handle requests from the deployed frontend.
 
-### `npm run build`
+ 6. Deployed and Production-Ready
+    Frontend hosted on Netlify, backend on Render — no local server needed to use it live.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 7. Carbon Awareness
+    Promotes eco-consciousness by helping users monitor and manage their electricity usage over         time.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tech Stack
+  React – For building the user interface and components
+  Recharts – To visualize electricity usage with responsive bar charts
+  CSS – Custom styling for layout and design
+  Netlify – Hosting and deployment of the frontend
+  Node.js – JavaScript runtime for the server
+  Express.js – Web framework to handle API routes and requests
+  CORS – Middleware for cross-origin request handling
+  SQLite – Lightweight, file-based database for storing usage data
+  Render – Hosting and deployment of the backend server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ### Installation
+
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Run `npm install` to install dependencies.
+4. Run `node index.js` to deploy the backend server.
+5. Run `npm start` to deploy the frontend server.
+
+
+## Contribution
+Feel free to contribute to this project by opening issues or creating pull requests. Your feedback and contributions are highly appreciated!
+- [Zama Mehdi](mailto:zamamehdi9@gmail.com)
