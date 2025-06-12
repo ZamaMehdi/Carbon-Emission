@@ -11,6 +11,7 @@ const months = [
 ];
 
 const API_URL = 'http://localhost:4000';
+const API_URL = 'https://carbon-emission-1.onrender.com';
 
 function App() {
   const [entries, setEntries] = useState([]);
