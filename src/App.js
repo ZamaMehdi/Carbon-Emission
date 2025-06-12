@@ -10,7 +10,7 @@ const months = [
   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
 ];
 
-const API_URL = 'http://localhost:4000';
+// const API_URL = 'http://localhost:4000';
 const API_URL = 'https://carbon-emission-1.onrender.com';
 
 function App() {
