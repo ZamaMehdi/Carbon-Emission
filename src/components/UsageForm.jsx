@@ -35,16 +35,23 @@ export default function UsageForm({ onSubmit }) {
     }
     // Only use entered values, do not fill empty meters
     const entries = usage.map((row, idx) => {
-      const vals = [row.meter1, row.meter2, row.meter3].map(v => v === '' ? null : parseFloat(v));
+      // Keep the original string values for display and calculations
+      const vals = [row.meter1, row.meter2, row.meter3].map(v => v === '' ? null : v);
       const entered = vals.filter(v => v !== null);
       if (entered.length === 0) return null; // skip empty rows
-      const monthlyUsage = entered.reduce((a, b) => a + b, 0);
+      
+      // Calculate monthly usage by converting to numbers only for the sum
+      const monthlyUsage = entered.reduce((sum, val) => {
+        const numVal = parseFloat(val);
+        return sum + (isNaN(numVal) ? 0 : numVal);
+      }, 0);
+
       return {
         month: months[idx],
         meter1: vals[0],
         meter2: vals[1],
         meter3: vals[2],
-        monthlyUsage,
+        monthlyUsage: monthlyUsage.toFixed(2), // Keep 2 decimal places for consistency
         billDate,
       };
     }).filter(Boolean);
