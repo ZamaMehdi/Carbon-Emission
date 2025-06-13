@@ -158,7 +158,7 @@ function App() {
   if (view === 'home') {
     return (
       <div className="app-container home-screen">
-        <h1>Energy Tracker</h1>
+        <h1>Carbon Emission Tracker</h1>
         <div className="home-options">
           <button className="big-btn" onClick={() => { setView('new'); setEntries([]); setSelectedDate(''); setError(''); setSuccess(''); }}>New Entry</button>
           <button className="big-btn" onClick={() => { setView('stored'); setEntries([]); setSelectedDate(''); setError(''); setSuccess(''); }}>Stored Data</button>
