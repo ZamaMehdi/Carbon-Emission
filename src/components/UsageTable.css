@@ -1,34 +1,69 @@
 .usage-table-container {
-  margin: 32px auto;
-  max-width: 800px;
-  background: #f8faf7;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  padding: 24px;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
+  margin: 0 auto;
+  overflow-x: auto;
 }
+
 .usage-table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1rem;
 }
-.usage-table th, .usage-table td {
-  border: 1px solid #e0e0e0;
-  padding: 10px 8px;
-  text-align: center;
-}
+
 .usage-table th {
-  background: #e8f5e9;
+  background: #f8f9fa;
+  color: #2c3e50;
   font-weight: 600;
+  text-align: left;
+  padding: 16px;
+  border-bottom: 2px solid #e9ecef;
+  white-space: nowrap;
 }
-.usage-table tr:nth-child(even) {
-  background: #f1f8e9;
+
+.usage-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e9ecef;
+  color: #2c3e50;
 }
-@media (max-width: 600px) {
+
+.usage-table tr:last-child td {
+  border-bottom: none;
+}
+
+.usage-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.usage-table .month {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.usage-table .usage-value {
+  font-family: 'Inter', monospace;
+  color: #3498db;
+  font-weight: 500;
+}
+
+.usage-table .total {
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
   .usage-table-container {
-    padding: 8px;
+    padding: 20px;
+    margin: 0 12px;
   }
-  .usage-table th, .usage-table td {
-    padding: 6px 2px;
-    font-size: 0.95rem;
+
+  .usage-table th,
+  .usage-table td {
+    padding: 12px 8px;
+    font-size: 0.9rem;
   }
 } 
