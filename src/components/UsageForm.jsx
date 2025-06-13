@@ -71,13 +71,31 @@ export default function UsageForm({ onSubmit }) {
           <div className="usage-row" key={month + idx}>
             <div className="usage-cell month-label">{month}</div>
             <div className="usage-cell">
-              <input type="number" min="0" value={usage[idx].meter1} onChange={e => handleUsageChange(idx, 'meter1', e.target.value)} />
+              <input 
+                type="number" 
+                min="0" 
+                step="0.01" 
+                value={usage[idx].meter1} 
+                onChange={e => handleUsageChange(idx, 'meter1', e.target.value)} 
+              />
             </div>
             <div className="usage-cell">
-              <input type="number" min="0" value={usage[idx].meter2} onChange={e => handleUsageChange(idx, 'meter2', e.target.value)} />
+              <input 
+                type="number" 
+                min="0" 
+                step="0.01" 
+                value={usage[idx].meter2} 
+                onChange={e => handleUsageChange(idx, 'meter2', e.target.value)} 
+              />
             </div>
             <div className="usage-cell">
-              <input type="number" min="0" value={usage[idx].meter3} onChange={e => handleUsageChange(idx, 'meter3', e.target.value)} />
+              <input 
+                type="number" 
+                min="0" 
+                step="0.01" 
+                value={usage[idx].meter3} 
+                onChange={e => handleUsageChange(idx, 'meter3', e.target.value)} 
+              />
             </div>
           </div>
         ))}
