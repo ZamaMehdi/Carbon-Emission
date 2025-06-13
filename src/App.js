@@ -69,22 +69,23 @@ function App() {
         newEntries.forEach((entry) => {
           const idx = months.indexOf(entry.month);
           if (idx !== -1) {
-            monthUsageMap[entry.month] = entry.monthlyUsage;
+            monthUsageMap[entry.month] = parseFloat(entry.monthlyUsage);
           }
         });
-        const enteredUsages = Object.values(monthUsageMap);
-        const avg = enteredUsages.length > 0 ? Math.round(enteredUsages.reduce((a, b) => a + b, 0) / enteredUsages.length) : 0;
+        const enteredUsages = Object.values(monthUsageMap).map(v => parseFloat(v)).filter(v => !isNaN(v));
+        const avg = enteredUsages.length > 0 ? (enteredUsages.reduce((a, b) => a + b, 0) / enteredUsages.length) : 0;
+        const avgFixed = parseFloat(avg.toFixed(2));
         const fullData = months.map((month) => {
           if (monthUsageMap[month] !== undefined) {
             return {
               month,
-              monthlyUsage: monthUsageMap[month],
+              monthlyUsage: parseFloat(monthUsageMap[month].toFixed(2)),
               isEstimate: false,
             };
           } else {
             return {
               month,
-              monthlyUsage: avg,
+              monthlyUsage: avgFixed,
               isEstimate: true,
             };
           }
@@ -126,25 +127,26 @@ function App() {
     // Only use the first 12 months for chart/table
     const idx = months.indexOf(entry.month);
     if (idx !== -1) {
-      monthUsageMap[entry.month] = entry.monthlyUsage;
+      monthUsageMap[entry.month] = parseFloat(entry.monthlyUsage);
     }
   });
   // Calculate average of entered months
-  const enteredUsages = Object.values(monthUsageMap);
-  const avg = enteredUsages.length > 0 ? Math.round(enteredUsages.reduce((a, b) => a + b, 0) / enteredUsages.length) : 0;
+  const enteredUsages = Object.values(monthUsageMap).map(v => parseFloat(v)).filter(v => !isNaN(v));
+  const avg = enteredUsages.length > 0 ? (enteredUsages.reduce((a, b) => a + b, 0) / enteredUsages.length) : 0;
+  const avgFixed = parseFloat(avg.toFixed(2));
 
   // Build full data for table/chart
   const fullData = months.map((month) => {
     if (monthUsageMap[month] !== undefined) {
       return {
         month,
-        monthlyUsage: monthUsageMap[month],
+        monthlyUsage: parseFloat(monthUsageMap[month].toFixed(2)),
         isEstimate: false,
       };
     } else {
       return {
         month,
-        monthlyUsage: avg,
+        monthlyUsage: avgFixed,
         isEstimate: true,
       };
     }
