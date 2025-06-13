@@ -51,7 +51,7 @@ export default function UsageForm({ onSubmit }) {
         meter1: vals[0],
         meter2: vals[1],
         meter3: vals[2],
-        monthlyUsage: monthlyUsage.toFixed(2), // Keep 2 decimal places for consistency
+        monthlyUsage: monthlyUsage.toString(), // Keep exact decimal places without rounding
         billDate,
       };
     }).filter(Boolean);
