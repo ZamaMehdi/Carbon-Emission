@@ -15,13 +15,16 @@ export default function UsageForm({ onSubmit }) {
   const [success, setSuccess] = useState('');
 
   const handleUsageChange = (monthIdx, meter, value) => {
-    setUsage((prev) => {
-      const updated = [...prev];
-      updated[monthIdx] = { ...updated[monthIdx], [meter]: value };
-      return updated;
-    });
-    setError('');
-    setSuccess('');
+    // Allow empty string or valid decimal numbers
+    if (value === '' || /^\d*\.?\d*$/.test(value)) {
+      setUsage((prev) => {
+        const updated = [...prev];
+        updated[monthIdx] = { ...updated[monthIdx], [meter]: value };
+        return updated;
+      });
+      setError('');
+      setSuccess('');
+    }
   };
 
   const handleSubmit = (e) => {
@@ -32,7 +35,7 @@ export default function UsageForm({ onSubmit }) {
     }
     // Only use entered values, do not fill empty meters
     const entries = usage.map((row, idx) => {
-      const vals = [row.meter1, row.meter2, row.meter3].map(v => v === '' ? null : Number(v));
+      const vals = [row.meter1, row.meter2, row.meter3].map(v => v === '' ? null : parseFloat(v));
       const entered = vals.filter(v => v !== null);
       if (entered.length === 0) return null; // skip empty rows
       const monthlyUsage = entered.reduce((a, b) => a + b, 0);
@@ -72,29 +75,32 @@ export default function UsageForm({ onSubmit }) {
             <div className="usage-cell month-label">{month}</div>
             <div className="usage-cell">
               <input 
-                type="number" 
-                min="0" 
-                step="0.01" 
+                type="text" 
+                inputMode="decimal"
+                pattern="\d*\.?\d*"
                 value={usage[idx].meter1} 
                 onChange={e => handleUsageChange(idx, 'meter1', e.target.value)} 
+                placeholder="0.00"
               />
             </div>
             <div className="usage-cell">
               <input 
-                type="number" 
-                min="0" 
-                step="0.01" 
+                type="text" 
+                inputMode="decimal"
+                pattern="\d*\.?\d*"
                 value={usage[idx].meter2} 
                 onChange={e => handleUsageChange(idx, 'meter2', e.target.value)} 
+                placeholder="0.00"
               />
             </div>
             <div className="usage-cell">
               <input 
-                type="number" 
-                min="0" 
-                step="0.01" 
+                type="text" 
+                inputMode="decimal"
+                pattern="\d*\.?\d*"
                 value={usage[idx].meter3} 
                 onChange={e => handleUsageChange(idx, 'meter3', e.target.value)} 
+                placeholder="0.00"
               />
             </div>
           </div>
